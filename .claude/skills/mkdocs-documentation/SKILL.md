@@ -195,6 +195,19 @@ Laajassa dokumentaatiossa tarkista tekninen oikeellisuus, rakenne, terminologia,
 
 Älä suorita raskasta buildia tai täydellistä QA:ta triviaalin muutoksen vuoksi.
 
+## Kielto: gh-pages-haara
+
+**Gh-pages-haaran käyttö ja luominen on kielletty absoluuttisesti.**
+
+Älä koskaan:
+- välitä sisältöä `gh-pages`-haaraan
+- käytä `mkdocs gh-deploy`-komentoa tai vastaavaa työkalua
+- muuta `mkdocs.yml`-deploy-asetuksia gh-pagesiin
+
+MkDocs-sivusto generoidaan `site/`-hakemistoon paikallisesti tarkistusta varten. Julkaisemin tapahtuu kohteliaan soveltuvin keinoin – **ei koskaan `gh-pages`-haaran kautta**.
+
+Projekti käyttää ainoastaan `main`-haaraa. Katso lisätietoja projektin `CLAUDE.md`-tiedostosta.
+
 ## Älä tee näitä ilman käyttäjän pyyntöä
 
 Älä lue koko repositorya.

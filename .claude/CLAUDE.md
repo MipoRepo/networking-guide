@@ -89,6 +89,19 @@ Esimerkiksi:
 ```
 Älä lisää infolaatikoita mekaanisesti.
 
+## Git-ohjeet ja haaranhallinta
+
+Projekti käyttää **vain `main`-haaraa**. Kaikki muutokset commitataan suoraan `main`-haaraan.
+
+**Gh-pages-haaran käyttö ja luominen on kielletty absoluuttisesti.** Älä koskaan:
+
+- välitä mitään sisältöä tai committeja `gh-pages`-haaraan
+- asettaa MkDocs `site_dir`-asetukseksi `gh-pages`-hakemistoa tai muuta deploy-konfiguraatiota gh-pagesiin
+- yritä "korjata" tai palauttaa poistettua `gh-pages`-haaraa
+- käyttää `mkdocs gh-deploy`-komentoa tai vastaavaa työkalua
+
+MkDocs-generoitu sivusto sijaitsee ainoastaan `site/`-hakemistossa paikallisesti tarkistusta varten. Sen julkaisemin kohtelee erikseen soveltuvilla menetelmillä – **ei koskaan `gh-pages`-haaran kautta**.
+
 # Todo-prosessi
 
 Projektin `todo/`-hakemisto toimii laajan sisältöprojektin tilanhallintana ja jatkuvuusmekanismina.

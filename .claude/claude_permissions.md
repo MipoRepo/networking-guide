@@ -51,6 +51,19 @@ Claude Code ei saa ilman käyttäjän nimenomaista pyyntöä:
 - muuttaa muita järjestelmätason asetuksia
 - ottaa käyttöön järjestelmänlaajuista automaattista käyttöoikeutta
 
+## Git-haaranhallinta
+
+Projekti kayttaa **vain `main`-haaraa**. Kaikki muutokset commitataan suoraan `main`-haaraan.
+
+**Gh-pages-haaran kaytto ja luominen on kielletty absoluuttisesti.** Aina koskaan:
+
+- vilaa sisautoa `gh-pages`-haaraan
+- kayta `mkdocs gh-deploy`-komentoa tai vastaavaa työkalua
+- muuta MkDocs-deploy-asetuksia `gh-pages`-haaraan kohdistuksi
+- yrita palauttaa poistettua `gh-pages`-haaraa
+
+MkDocs-generoitu sivusto sijaitsee ainoastaan `site/`-hakemistossa paikallisesti. Sen julkaisemin on toteutettava muilla keinoin – **ei koskaan `gh-pages`-haaran kautta**.
+
 ## Scope
 
 Projektin Claude Code -permissionit ovat projektikohtaisia.
