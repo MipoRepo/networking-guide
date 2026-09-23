@@ -100,7 +100,7 @@ nav:
 
   - IPv4-osoitteet, aliverkot ja ARP:
     - Johdanto: "03-ipv4/index.md"
-    - IPv4-protokuoli: "03-ipv4/ipv4.md"
+    - IPv4-protokolla: "03-ipv4/ipv4.md"
     - IP-osoite: "03-ipv4/ip-osoite.md"
     - Aliverkot (Subnet): "03-ipv4/aliverkot.md"
     - Subnetointi: "03-ipv4/subnetointi.md"

@@ -1,6 +1,6 @@
 # Verkkolaitteet ja kaapelointi
 
-Tämä osio käsittelee fysisiä verkkolaitteita – niiden rakennetta, roolia ja todennäköistä käyttöä verkkoissa. Ymmärtääksesi, miten verkot todella toimivat, on tärkeää tietää, mitä laitteita on käytössä ja miten ne yhteistyistlevät.
+Tämä osio käsittelee fysisiä verkkolaitteita – niiden rakennetta, roolia ja todennäkistä käyttöä verkkoissa. Ymmärtääksesi, miten verkot todella toimivat, on tärkeää tietää, mitä laitteita on käytössä ja miten ne yhteistyistlevat.
 
 ## Mitä tämä osio käsittelee?
 
@@ -9,22 +9,22 @@ Tämä osio käsittelee fysisiä verkkolaitteita – niiden rakennetta, roolia j
 | Kytkin | Switch (Layer 2) | Miten verkko laitetaan yhteyttä sisäiseen verkkoon? |
 | Reititin | Router (Layer 3) | Miten verkot kytketään eri verkoihin yhteensä? |
 | Palomuuri | Firewall | Miten verkkoliikenne suodatetaan turvallisuuden vuoksi? |
-| Verkkokortti | NIC (Network Interface Card) | Miten laitteisto liittyy fyysiseen verkkoon? |
+| Verkkokortti | NIC | Miten laitteisto liittyy fyysiseen verkkoon? |
 | Kaapelointi | Kuitu ja mediat | Miten tiedot kulkeutuvat fyysisillä verkoilla? |
 
 ## Miksi laitteet ovat tärkeitä?
 
 | Laitteisto rooli | Toiminto |
 |------------------|-----------|
-| **Kytkin (switch)** | Liittää useita laitteia samassa verkossa (bridge) |
-| **Reititin (router)** | Yhdistää erilaiset verkot (differentiate) |
-| **Palomuuri (firewall)** | Suodattaa liikennettä turvallisuuden vuoksi |
-| **Verkkokortti (NIC)** | Tarjoaa fyysisen liittymän laitteistolle |
-| **Kaapelit** | Katkaisevat tiedon verkosta – usein yli 100 m |
+| **Kytkin** | Liittää useat laitteet yhteisein verkkoon (bridge) |
+| **Reititin** | Yhdistää erilaiset verkot |
+| **Palomuuri** | Suodattaa liikennettä turvallisuuden vuoksi |
+| **Verkkokortti** | Tarjoaa fyysisen liittymän laitteistolle |
+| **Kaapelit** | Katkaisevat tiedot verkosta – usein yli 100 m |
 
 ## OSI-mallin vastaavuus
 
-Verkkolaiteet ovat usein multi-protokollista ja -kerroksista:
+Verkkolaiteet ovat usein multi-protokollista ja useita kerroksia:
 
 | Laitteisto | Pääasiallinen kerros | Toiminto |
 |------------|---------------------|----------|
@@ -35,4 +35,4 @@ Verkkolaiteet ovat usein multi-protokollista ja -kerroksista:
 
 ## Seuraavaksi
 
-Jatkimme yksityiskohtaisemmin kunkin laitteen toiminnasta. Aloitamme [kytkimen](kytkin.md) kanssa – Layer 2 -laitteesta, joka on useimmissa paikallisissa verkoissa.
+Jatkomme yksityiskohtaisemmin kunkin laitteen toiminnasta. Aloitamme [kytkimen](kytkin.md) kanssa – Layer 2-laitteesta, joka on useimmissa paikallisissa verkoissa.

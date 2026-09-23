@@ -1,10 +1,10 @@
 # Palomuuri (Firewall)
 
-**Palomuuri** (firewall) on turvajärjestely – laitteisto tai ohjelmisto – joka valvoo ja suodattaa verkkoliikennettä sääntysten perusteella. Tämä dokumentti perustuu **RFC 6973** (Privacy Considerations in Internet Protocols) ja yleisiin palomuurimekaniikoihin.
+**Palomuuri** (firewall) on turvajärjestely – laitteisto tai ohjelmisto – joka valvoo ja suodattaa verkkoliikennettä sääntysten perusteella. Tämä dokumentti perustelee yleitä palomuurimekaniikoita.
 
 ## Mikä palomuuri on?
 
-Palomuuri toimii **pääsääntöjen avulla** – jokainen yhteys tarkastetaan näiden sääntsten mukaan:
+Palomuuri toimii pääsääntöjen avulla – jokainen yhteys tarkastetaan näiden sääntsten mukaan:
 
 | Sääntö | Toimenpide |
 |--------|------------|
@@ -15,49 +15,49 @@ Palomuuri toimii **pääsääntöjen avulla** – jokainen yhteys tarkastetaan n
 
 | Ilman palomuuria | Palomuurin kanssa |
 |-------------------|-------------------|
-| Kaikki portit aukeat | Valitut portit aukeet |
+| Kaikki portit avoimet | Vain valitut portit avoimet |
 | Tuntemattomat yhteydet | Turvalliset yhteydet |
-| Hyökkäykset helpohia | Hyökkäykset vaikeampia |
+| Hyökkäykset helpot | Hyökkäykset vaikeampia |
 
 ## Palomuurin perusperiaatteet
 
-### 1. Pohjimmus (Default Policy)
+### 1. Oletuspolitiikki (Default Policy)
 
 Jokaisella palomuurilla on kaksi perusasetusta:
 
 | Asetus | Selitys |
 |--------|---------|
-| **default allow** | Kaikki sallittu ellei erikseen kiellata |
-| **default deny** | Kaikki kiellitty ellei erikseen sallita |
+| **default allow** | Kaikki sallittu eli ei erikseen kiellitty |
+| **default deny** | Kaikki kiellitty eli ei erikseen sallittu |
 
 !!! warning "Paras käytäntö"
 
-    Modernit verkot käyttävät "default deny" -periaatetta – vain varatut liikkeet ovat sallittuja. Tämä on NSA Cybersecurity -suositus.
+    Modernit verkot käyttävät "default deny"-periaatetta – vain varatut liikkeet ovat sallittuja. Tämä on NSA Cybersecurity -suositus.
 
 ### 2. Läpimenoaika (Stateful vs Stateless)
 
 | Tyyppi | Selitys | Esimerkki |
 |--------|---------|-----------|
 | **Stateful** | Seuraa yhteyttä – "Tämä vastaus kuuluu tuohon kyselyyn?" | Linux `conntrack`, iptables |
-| **Stateless** | Tarkastelee kukin paketin erikseen | Perusreititin suodatus |
+| **Stateless** | Tarkastelee kutkin paketin erikseen | Perusreititin suodatus |
 
-Stateful on turvallisempi, koska se ei tarvitse erikäsitellä vastauksia erikseen.
+Stateful on turvallisempi, koska se ei tarvitse erikseen käsitella vastauksia.
 
 ## Palomuurin muodot
 
 | Muoto | Selitys | Käyttö |
 |-------|---------|--------|
-| **Verkkopalomuuri** | Fysikaalinen laite erillään reitittimen tai kytkennin edessä | Unternehmen |
+| **Verkkopalomuuri** | Fysikaalinen laite erillään reitittimen tai kytkin edessä | Organisaatiot |
 | **Ohjelmistopuiminen** | Linux `iptables`, Windows Firewall | Yksiläishenkilöt, palvelimet |
-| **Sovelluspohjainen** | Sovelluksen sisällä oleva suodatin | Tietty sovellus |
+| **Sovelluspohjainen** | Suodatin sovelluksen sisällä | Tietty sovellus |
 
-## Esimeke: Linux `iptables`
+## Esimerkki: Linux `iptables`
 
 ```bash
 # Oletussääntö: kaikki kiellitty
 iptables -P INPUT DROP
 
-# Salli joajo set yhteydet (esim. jo palatessa)
+# Salli joajo set yhteydet
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 # Salli SSH (portti 22)
@@ -75,8 +75,8 @@ iptables -L -n -v
 
 ## Palomuurin sääntöjen rakenne
 
-| Sarakkeet | Selitys |
-|-----------|---------|
+| Sarake | Selitys |
+|--------|---------|
 | **Chain** | INPUT / OUTPUT / FORWARD |
 | **Protocol** | TCP / UDP / ICMP |
 | **Source** | Lähdeosoite (esim. 192.168.1.0/24) |
@@ -84,16 +84,16 @@ iptables -L -n -v
 | **Portti** | (TCP/UDP) – esim. 22 (SSH) |
 | **Action** | ACCEPT / DROP / REJECT / LOG |
 
-## DMZ: Demilitarisoituvyysalue
+## DMZ: Demilitarisoitu alue
 
-DMZ (Demilitarized Zone) on erillinen aliverkko, jossa palvelimet (esim. www-palvelin) ovat eristettynä sisäverkosta ja ulompiusta. Palomuuri sallii vain tietyt yhteydet tähän alueeseen.
+DMZ (Demilitarized Zone) on erillinen aliverkko, jossa palvelimet (esim. web-palvelin) ovat eristettyinä sisäverkosta ja ulompiusta. Palomuuri sallii vain tietyt yhteydet tähän alueeseen.
 
 ## Palomuurin rajoitukset
 
 | Rajoite | Selitys |
 |---------|---------|
 | **Deep Packet Inspection** | Kaikki paketit eivät ole tarkistettu syvällisesti |
-| **Suorituskyky** | Liian monet sääntöt hidastavat liikennettä |
+| **Suorituskyky** | Liian monta sääntöä hidastaa liikennettä |
 | **Man-in-the-Middle** | Salaamaton liikenne voi purettaa |
 | **Zero-day** | Tuntemattomat hyökkäykset voivat ohittaa |
 

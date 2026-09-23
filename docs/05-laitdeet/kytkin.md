@@ -22,8 +22,8 @@ Kytkin on laite, joka:
 
 Kytkin ylläpitää taulukkoa, jossa on:
 
-| MAC-osoite | Portti | VLÄ |
-|------------|--------|-----|
+| MAC-osoite | Portti | VLAN |
+|------------|--------|------|
 | 00:11:22:33:44:55 | Gi0/1 | VLAN 10 |
 | 66:77:88:99:AA:BB | Gi0/2 | VLAN 10 |
 
@@ -35,7 +35,7 @@ Kun kytkin saa kehyksen, se:
 
 ## Flooding, Filtering, Forwarding
 
-Kytkin käyttää kolme perusperiaattia:
+Kytkin käyttää kolmea perusperiaattia:
 
 | Toiminto | Selitys | Esimerkki |
 |----------|---------|-----------|
@@ -47,38 +47,33 @@ Kytkin käyttää kolme perusperiaattia:
 
 | Mekanismi | Selitys | Hyöty |
 |----------|---------|-------|
-| **Store-and-Forward** | Lukee koko kehyksen, tarkistaa virheet | Tarkkuus, virheenjärkitys |
-| **Cut-Through** | Lähetä heti, kun käänne tiedetään | Nopeus, latency |
+| **Store-and-Forward** | Lukee koko kehyksen, tarkistakseen virheet | Tarkkuus, virheenjärkitys |
+| **Cut-through** | Lähetä heti, kun käänne tiedetään | Nopeus, viive (latency) |
 
-!! info "Virheenjärkitys"
+!!! info "Virheenjärkitys"
 
-    Store-and-Forward -mallissa tarkistetaan FCS-elektrisuus (Frame Check Sequence) – jos se ei täsmää, kehys hylätään hiljallisesti.
+    Store-and-Forward -mallissa tarkistetaan FCS-ele (Frame Check Sequence) – jos se ei täsmää, kehys hylätään hiljallisesti.
 
-## Portti-tilat (Port States)
+## Porttien tilat (Port States)
 
-Kytkin käsitkee yhteyttä useissa vaiheessa:
+Kytkin käsittelee yhteyttä useissa vaiheessa:
 
 | Tila | Selitys |
 |-------|---------|
-| **Blocking** | Ei hyväksy kehyksiä (esim. STP-silmus) |
+| **Blocking** | Ei hyväksy kehykiä (esim. STP-silmus) |
 | **Listening** | Odottaa, kuuntelee yhteyttä |
 | **Learning** | Oppii MAC-osoitteet |
 | **Forwarding** | Lähettää kehykset normaalisti |
 
 ## Spanning Tree -yhteys (STP)
 
-Kytkimet käyttävät STP:ä estämään verkkosilmukset (verkon silmukaus). Tämä on tärkeä osa [06-spanning-tree/index.md](../06-spanning-tree/index.md).
+Kytkimet käyttävät STP:ää estämään verkkosilmukset. Tämä on tärkeä osa [06-spanning-tree/index.md](../06-spanning-tree/index.md).
 
 ## Esimerkki: Porttien tarkastelu
 
 ```bash
-# Näytä MAC-taulu
 show mac address-table
-
-# Portin tila
 show spanning-tree interface GigabitEthernet0/1
-
-# Portin tilat
 show interfaces status
 ```
 
@@ -87,7 +82,7 @@ show interfaces status
 | Tyyppi | Portit | Käyttö |
 |--------|--------|---------|
 | Tarjoilijat (Unmanaged) | 5–8 | Kotiverkot |
-| Hallitut (Managed) | 24–48 | Unternehmen |
+| Hallitut (Managed) | 24–48 | Organisaatiot |
 | Layer 3 -kytkin | 24–48 | Yhdistää Layer 2 ja Layer 3 |
 
 ## Seuraavaksi

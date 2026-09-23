@@ -1,0 +1,18 @@
+mkdir -p .claude/rules \
+         .claude/skills/source-analysis \
+         .claude/skills/networking-content \
+         .claude/skills/mkdocs-documentation \
+         .claude/skills/technical-review \
+         .claude/skills/documentation-qa \
+         .claude/skills/visual-design && \
+touch .claude/CLAUDE.md \
+      .claude/rules/content.md \
+      .claude/rules/structure.md \
+      .claude/rules/sources.md \
+      .claude/rules/quality.md \
+      .claude/skills/source-analysis/SKILL.md \
+      .claude/skills/networking-content/SKILL.md \
+      .claude/skills/mkdocs-documentation/SKILL.md \
+      .claude/skills/technical-review/SKILL.md \
+      .claude/skills/documentation-qa/SKILL.md \
+      .claude/skills/visual-design/SKILL.md

@@ -8,7 +8,7 @@ Reititin tekee kolme päätoimenpidettä:
 
 1. **Vastaanottaa paketit** eri verkoista
 2. **Päättää, minne ne lähetetään** reititystaulun perusteella
-3. **Lähettää ne oikeaan suuntaan** – seuraavan hyppykohdan (next-hop) mukaisesti
+3. **Lähettää ne oikeaan suuntaan** – seuraavan hypyn (next-hop) mukaisesti
 
 ## Miksi reititin on tärkeä?
 
@@ -18,13 +18,13 @@ Reititin tekee kolme päätoimenpidettä:
 | Ei ulkopuoltaista liikennettä | Internet-yhteys mahdollista |
 | Ei NAT:ia | Ei NAT:ia |
 
-## Reititin keskeiset komponentit
+## Reitittisen keskeiset komponentit
 
 | Komponentti | Selitys |
 |-------------|---------|
 | **Reititystaulu** | Tietokanta: verkko → seuraaja |
 | **Portit** | Verkko-portit (esim. Ethernet, serial) |
-| **Prosessori (CPU)** | Päättitaa, miten paketit kuljetetaan |
+| **Prosessori (CPU)** | Päättää, miten paketit kuljetetaan |
 | **Muisti (RAM)** | Tilastot, reititystaulu |
 | **Flash** | Käynnissä oleva konfigurointi |
 
@@ -33,12 +33,12 @@ Reititin tekee kolme päätoimenpidettä:
 Kun reititin vastaanottaa paketin, se toimii kolmessa vaiheessa:
 
 1. **Tarkista kohdeosoite** – `192.168.2.100`
-2. **Etsi parhaiten täsmäävä reitti** – `192.168.2.0/24 via 10.0.0.2`
-3. **Lähetä paketti seuraajaan** – kopioi uusi Ethernet-kehys (MAC-osoitteet)
+2. **Etsi paras täsmäävä reitti** – `192.168.2.0/24 via 10.0.0.2`
+3. **Lähetä paketti seuraajalle** – kopioi uusi Ethernet-kehys (MAC-osoitteet)
 
 ## Reittien prioriteetti
 
-Reititin valitsee aina **pidemmän maskin** (enemmän täsmäävän):
+Reititin valitsee aina pidemmän maskin (enemmän täsmäävän):
 
 | Reitti | Maski | Valinta |
 |--------|-------|---------|
@@ -50,7 +50,7 @@ Reititin valitsee aina **pidemmän maskin** (enemmän täsmäävän):
 
 Useimmissa reitittimeissä on NAT-ominaisuus, joka kääntää private-osoitteet public-osoitteiksi ulospäin. Lisätietoja löytyy [09-nat/index.md](../09-nat/index.md).
 
-## Esimerkikonfigurointi (Cisco)
+## Esimerkkikonfigurointi (Cisco)
 
 ```text
 ! Aseta osoite portille
@@ -68,7 +68,7 @@ ip route 0.0.0.0 0.0.0.0 192.168.1.254
 show ip route
 ```
 
-## Esimerkikonfigurointi (Linux)
+## Esimerkkikonfigurointi (Linux)
 
 ```bash
 # Lisää reitti
@@ -84,13 +84,13 @@ ip route show
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
-## Reititin erikoistapaukset
+## Reititen erikoistapaukset
 
 | Tilanne | Toimenpide |
 |---------|-----------|
-| **Tuntematon verkko** | Paketti hylätään (ICMP "Destination Unreachable") |
-| **TTL päätyy nollaan** | Paketti hylätään (ICMP "Time Exceeded") |
-| **Fragmentation** | ISO pakki jaetaan pienempiin osiin |
+| Tuntematon verkko | Paketti hylätään (ICMP "Destination Unreachable") |
+| TTL päätyy nollaan | Paketti hylätään (ICMP "Time Exceeded") |
+| Fragmentaatio | ISO pakki jaetaan pienempiin osiin |
 
 ## Seuraavaksi
 
