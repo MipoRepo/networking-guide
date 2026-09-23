@@ -174,10 +174,10 @@ nav:
 
   - IPv6:
       - Johdanto: "13-ipv6/index.md"
-      - IPv6: "13-ipv6/ipv6.md"
       - IPv6-osoitteet: "13-ipv6/ipv6-osoitteet.md"
       - Osoitteistus: "13-ipv6/osoitteistus.md"
       - Dual-stack: "13-ipv6/dual-stack.md"
+      - OSPFv3: "13-ipv6/ospf-v6.md"
 
   - Border Gateway Protocol (BGP):
       - Johdanto: "14-bgp/index.md"
