@@ -91,16 +91,11 @@ Esimerkiksi:
 
 ## Git-ohjeet ja haaranhallinta
 
-Projekti käyttää **vain `main`-haaraa**. Kaikki muutokset commitataan suoraan `main`-haaraan.
+Projekti käyttää **vain `main`-haaraa** kehittämiseen. Kaikki muutokset commitataan suoraan `main`-haaraan.
 
-**Gh-pages-haaran käyttö ja luominen on kielletty absoluuttisesti.** Älä koskaan:
-
-- välitä mitään sisältöä tai committeja `gh-pages`-haaraan
-- asettaa MkDocs `site_dir`-asetukseksi `gh-pages`-hakemistoa tai muuta deploy-konfiguraatiota gh-pagesiin
-- yritä "korjata" tai palauttaa poistettua `gh-pages`-haaraa
-- käyttää `mkdocs gh-deploy`-komentoa tai vastaavaa työkalua
-
-MkDocs-generoitu sivusto sijaitsee ainoastaan `site/`-hakemistossa paikallisesti tarkistusta varten. Sen julkaisemin kohtelee erikseen soveltuvilla menetelmillä – **ei koskaan `gh-pages`-haaran kautta**.
+**gh-pages-haaran** generaatii automaattisesti CI/CD-putki (`.github/workflows/pages.yml`)
+MkDocs-generoidusta `site/`-hakemistosta. Sitä **ei tulta muokata käsin** — se on
+deploy-haara, joka päivittyy jokaisen `main`-commitin yhteydessä.
 
 # Todo-prosessi
 
