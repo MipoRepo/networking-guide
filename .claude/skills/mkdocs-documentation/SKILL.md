@@ -195,17 +195,18 @@ Laajassa dokumentaatiossa tarkista tekninen oikeellisuus, rakenne, terminologia,
 
 Älä suorita raskasta buildia tai täydellistä QA:ta triviaalin muutoksen vuoksi.
 
-## GitHub Pages -julkaisu
+## Kielto: gh-pages-haara
 
-MkDocs-sivusto julkaistaan automaattisesti GitHub Pagesillä CI/CD-putkessa
-(`.github/workflows/pages.yml`). Workflow formooi `gh-pages`-haaran `site/`-hakemistosta.
+**Gh-pages-haaran käyttö ja luominen on kielletty absoluuttisesti.**
 
-**gh-pages-haaran kanssa toimiessasi:**
-- Älä koskaan muokata gh-pages-haaraa käsin – se on automaattinen deploy-haara
-- Älä käytä `mkdocs gh-deploy`-komentoa manuaalisesti – se voi hajottaa CI/CD-putketta
-- Älä muuta `mkdocs.yml`-deploy-asetuksiin ilman teknistä syytä
+Älä koskaan:
+- välitä sisältöä `gh-pages`-haaraan
+- käytä `mkdocs gh-deploy`-komentoa tai vastaavaa työkalua
+- muuta `mkdocs.yml`-deploy-asetuksia gh-pagesiin
 
-Jos `site/`-hakemistossa on muutoksia, committaa ne `main`-haaraan CI/CD hoitaa deployment.
+MkDocs-sivusto generoidaan `site/`-hakemistoon paikallisesti tarkistusta varten. Julkaisemin tapahtuu kohteliaan soveltuvin keinoin – **ei koskaan `gh-pages`-haaran kautta**.
+
+Projekti käyttää ainoastaan `main`-haaraa. Katso lisätietoja projektin `CLAUDE.md`-tiedostosta.
 
 ## Älä tee näitä ilman käyttäjän pyyntöä
 

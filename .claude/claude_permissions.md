@@ -53,11 +53,16 @@ Claude Code ei saa ilman käyttäjän nimenomaista pyyntöä:
 
 ## Git-haaranhallinta
 
-Projekti käyttää **vain `main`-haaraa** kehittämiseen. Kaikki muutokset commitataan suoraan `main`-haaraan.
+Projekti kayttaa **vain `main`-haaraa**. Kaikki muutokset commitataan suoraan `main`-haaraan.
 
-**gh-pages-haaran** generaatii automaattisesti CI/CD-putki (`.github/workflows/pages.yml`)
-MkDocs-generoidusta `site/`-hakemistosta. Sitä **ei tulta muokata käsin** -- se on
-deploy-haara, joka päivittyy jokaisen `main`-commitin yhteydessä.
+**Gh-pages-haaran kaytto ja luominen on kielletty absoluuttisesti.** Aina koskaan:
+
+- vilaa sisautoa `gh-pages`-haaraan
+- kayta `mkdocs gh-deploy`-komentoa tai vastaavaa työkalua
+- muuta MkDocs-deploy-asetuksia `gh-pages`-haaraan kohdistuksi
+- yrita palauttaa poistettua `gh-pages`-haaraa
+
+MkDocs-generoitu sivusto sijaitsee ainoastaan `site/`-hakemistossa paikallisesti. Sen julkaisemin on toteutettava muilla keinoin – **ei koskaan `gh-pages`-haaran kautta**.
 
 ## Scope
 
