@@ -48,7 +48,7 @@ Reititin valitsee aina **pidemmän maskin** (enemmän täsmäävän):
 
 ## NAT (Network Address Translation)
 
-Useimmissa reitittimeissä on NAT-ominaisuus, joka kääntää private-osoitteet public-osoitteiksi ulospäin. Lisätietoja löytyy [09-nat/index.md](../09-nat/index.md).
+Useimmissa reitittimeissä on NAT-ominaisuus, joka kääntää private-osoitteet public-osoitteiksi ulospäin. Lisätietoja löytyy [09-ipv4-nat/index.md](../09-ipv4-nat/index.md).
 
 ## Esimerkikonfigurointi (Cisco)
 

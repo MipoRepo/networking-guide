@@ -63,7 +63,7 @@ Koska Ethernetin maksimaalainen kehys on noin 1500 tavua (MTU), suuremmat paketi
 
 ## Miksi TTL on tärkeä?
 
-TTL (Time To Live) on suoja mekanismi verkon ääriin pääsemistä vastaan. Se aloitetaan arvolla (yleensä 64 tai 128) ja vähenee jokaisen hyppymksen yhteydessä. Kun TTL päätyy nollaan, pakettipala on "kadonnut" ja siitä lähetetään ICMP-ilmoitus (katso [ICMP](icmp.md) tai [10-tcp-udp](../10-tcp-udp/index.md)).
+TTL (Time To Live) on suoja mekanismi verkon ääriin pääsemistä vastaan. Se aloitetaan arvolla (yleensä 64 tai 128) ja vähenee jokaisen hyppymksen yhteydessä. Kun TTL päätyy nollaan, pakettipala on "kadonnut" ja siitä lähetetään ICMP-ilmoitus (katso ICMP-protokollaan tai [10-tcp-udp](../10-tcp-udp-ssh-http/index.md)).
 
 ## Kuinka IPv4 liittyy ARP:ään?
 

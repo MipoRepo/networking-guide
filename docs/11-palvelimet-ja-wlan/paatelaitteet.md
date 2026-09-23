@@ -42,8 +42,8 @@ ip route add default via 192.168.1.1
 
 Päätelaitteet ottavat automaattisesti verkkoon käyttäen:
 
-1. **DHCP** – hakee IP-osoitteen (katso [04-dhcp-ja-staattinen-reititys/index.md](../04-dhcp-ja-staattinen-reititys/index.md))
-2. **ARP** – hakee MAC-osoitteen (katso [03-ipv4-aliverkot-ja-arp/index.md](../03-ipv4-aliverkot-ja-arp/index.md))
+1. **DHCP** – hakee IP-osoitteen (katso [04-dhcp-routing/index.md](../04-dhcp-routing/index.md))
+2. **ARP** – hakee MAC-osoitteen (katso [03-ipv4/index.md](../03-ipv4/index.md))
 3. **DNS** – kääntää nimet IP-osoitteiksi
 
 ## Päätelaitteiden ominaisuudet

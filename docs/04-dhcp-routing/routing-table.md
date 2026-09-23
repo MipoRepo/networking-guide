@@ -70,7 +70,7 @@ Tämä tarkoittaa: "Tämä verkko on suoraan liittynyt – lähetä suoraan, ilm
 | Menetelmä | Selitys |
 |-----------|---------|
 | **Staattinen** | Reitti lisätään käsin (katso [staattinen-reititys.md](staattinen-reititys.md)) |
-| **Dynaaminen** | Reitti päivittyy automaattisesti (katso [07-reititys/dynaatinen-reititys.md](../07-reititys/dynaatinen-reititys.md)) |
+| **Dynaaminen** | Reitti päivittyy automaattisesti (katso [07-reititys/dynaaminen-reititys.md](../07-reititys/dynaaminen-reititys.md)) |
 
 ## Esimerkki: Cisco -tyylinen reititystaulu
 

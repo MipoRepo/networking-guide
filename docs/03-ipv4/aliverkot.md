@@ -53,7 +53,7 @@ CIDR on IANA:n ja IETF:n ylläpitämä standardi (RFC 4632), joka korvasi luokit
 
 ## Private-verkot (RFC 1918)
 
-IETF määrittelee kolme private-verkkoaluetta, jotka eivät ole internetissä reitittävissä (ne vaativat NATin – ks. [09-nat/index.md](../09-nat/index.md)):
+IETF määrittelee kolme private-verkkoaluetta, jotka eivät ole internetissä reitittävissä (ne vaativat NATin – ks. [09-ipv4-nat/index.md](../09-ipv4-nat/index.md)):
 
 | Aliverkko | Maski | Käyttö |
 |-----------|-------|--------|

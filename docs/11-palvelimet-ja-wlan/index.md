@@ -23,8 +23,8 @@ Tämä osio käsittelee kolmea keskeistä verkonteknologian aluetta: **palvelime
 
 Tämä osio rakentuu edellisten osioiden päälle:
 
-- [03-ipv4-aliverkot-ja-arp/index.md](../03-ipv4-aliverkot-ja-arp/index.md) – IPv4-osoitteet
-- [05-verkkolaitteet-ja-kaapelointi/index.md](../05-verkkolaitteet-ja-kaapelointi/index.md) – verkkolaitteet
+- [03-ipv4/index.md](../03-ipv4/index.md) – IPv4-osoitteet
+- [05-laitteet/index.md](../05-laitteet/index.md) – verkkolaitteet
 - [10-tcp-udp-ssh-http/index.md](../10-tcp-udp-ssh-http/index.md) – sovellusprotokollat
 
 ## Seuraavaksi

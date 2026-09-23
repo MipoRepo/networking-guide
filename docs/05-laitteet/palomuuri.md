@@ -99,4 +99,4 @@ DMZ (Demilitarized Zone) on erillinen aliverkko, jossa palvelimet (esim. www-pal
 
 ## Seuraavaksi
 
-Kun olet ymmärtänyt palomuurin roolin, siirrytään [verkkokorttiin](verkkokartti.md), joka käsittelee laitteen ja fyysisen verkon välistä yhteyttä.
+Kun olet ymmärtänyt palomuurin roolin, siirrytään [verkkokorttiin](verkkokortti.md), joka käsittelee laitteen ja fyysisen verkon välistä yhteyttä.

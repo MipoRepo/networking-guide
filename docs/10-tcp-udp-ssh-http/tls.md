@@ -145,4 +145,4 @@ Secure Sockets Layer
 
 ## Seuraavaksi
 
-Kun olet ymmärtänyt TCP, UDP, SSH ja HTTP/TLS -protokolat, siirrytään [11-palvelimet-paatelaitteet-wlan/index.md](../11-palvelimet-paatelaitteet-wlan/index.md)-osioon, jossa käsitellään palvelimpia, päätelaitteita ja WLAN:ää.
+Kun olet ymmärtänyt TCP, UDP, SSH ja HTTP/TLS -protokolat, siirrytään [11-palvelimet-ja-wlan/index.md](../11-palvelimet-ja-wlan/index.md)-osioon, jossa käsitellään palvelimpia, päätelaitteita ja WLAN:ää.

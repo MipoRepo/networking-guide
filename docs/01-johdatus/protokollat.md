@@ -82,8 +82,8 @@ omaa osiotaan, ja alhaisempi kerros tarjoaa palveluja ylemmälle kerrokselle.
 
 - [Ethernet-kehys](../02-ethernet/frame.md) – siirtomerkin paketointi
 - [IPv4-osoitteet](../03-ipv4/ip-osoite.md) – verkkokeran paketointi
-- [TCP ja UDP](../10-tcp-udp/index.md) – kuljetuskeran kahden wuai
-- [HTTP](../10-tcp-udp/http.md) ja [SSH](../10-tcp-udp/ssh.md) – sovelluskeran wuai
+- [TCP ja UDP](../10-tcp-udp-ssh-http/index.md) – kuljetuskeran kahden wuai
+- [HTTP](../10-tcp-udp-ssh-http/http.md) ja [SSH](../10-tcp-udp-ssh-http/ssh.md) – sovelluskeran wuai
 
 ---
 

@@ -38,7 +38,7 @@ Reititys tarkoittaa sitä, että laite (yleensä reititin) päättää, missä v
 
 ## Tämä osio ja IPv4
 
-Reititys toimii **Layer 3** -tasolla – IP-osoitteiden ja paketin kohdeosoitteen perusteella. Se liittyy suoraan [03-ipv4-aliverkot-ja-arp/index.md](../03-ipv4-aliverkot-ja-arp/index.md)-osioon, jossa käsitellään IP-osoitteita ja niiden ryhmittämistä.
+Reititys toimii **Layer 3** -tasolla – IP-osoitteiden ja paketin kohdeosoitteen perusteella. Se liittyy suoraan [03-ipv4/index.md](../03-ipv4/index.md)-osioon, jossa käsitellään IP-osoitteita ja niiden ryhmittämistä.
 
 ## Seuraavaksi
 
