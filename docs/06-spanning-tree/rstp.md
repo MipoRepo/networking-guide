@@ -53,7 +53,7 @@ RSTP käyttää **BPDU:tä**, joita lähetetään **joka 2 sekuntia** – kaksin
 ## Miksi RSTP on parempi?
 
 | Hyöty | Selitys |
-|-------|---------|
+| ----- | ----- |
 | **Nopeampi** | 3 sekuntia vs 30 sekuntia |
 | **Vakaampi** | Ei valmistelutilaan jumiutuminen |
 | **Yhteensopiva** | Työskentee myös STP:n kanssa (fallback) |
@@ -75,7 +75,7 @@ show spanning-tree interface gi0/1 detail
 ## RSTP:n Rajoitukset
 
 | Rajoite | Selitys |
-|---------|---------|
+| --------- | ------- |
 | **Ei resurssijako** | Käyttää yhä yhtä juurisaktuoria |
 | **Ei tasapainota** | Yksi polku voi olla liian pitkä |
 | **Ei linkkivika-asetuksia** | Vaatii erillinen mekanismi |
@@ -83,7 +83,7 @@ show spanning-tree interface gi0/1 detail
 ## RSTP vs MSTP (IEEE 802.1S)
 
 | Mekanismi | Standardi | Käyttö |
-|-----------|-----------|--------|
+| ---------- | ---------- | ------ |
 | **RSTP** | 802.1W | Yksinkertaiset verkot |
 | **MSTP** | 802.1S | Useampia VLAN-ryhmiä |
 
