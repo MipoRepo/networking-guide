@@ -5,30 +5,35 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Add permissions to the GITHUB_TOKEN
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Define the branches to deploy to, and their environments
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
 
-      - name: Build MkDocs site
+      - name: Build site
         run: mkdocs build --strict
 
       - name: Upload pages artifact
@@ -37,8 +42,12 @@ jobs:
           path: site/
 
   deploy:
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
