@@ -1,9 +1,14 @@
 # Tietoverkot – Opas ja koonti keskeisistä aiheista
 
-Tämä projekti sisältää selkeän ja käytännönläheisen oppaan tietoverkkojen
-perusteisiin. Materiaali on kirjoitettu kokonaan uudelleen ja pohjautuu
-tietoverkkojen yleisiin peruskäsitteisiin, standardeihin ja käytäntöihin.
-Sivusto on toteutettu MkDocs Material ‑teemalla.
+Tämä projekti sisältää selkeän ja käytännönläheisen oppaan tietoverkkojen perusteisiin. Opas on kirjoitettu ammattikorkeakoulussa käymäni kurssini jälkeen, muokaten muistiinpanojani. Se on kuitenkin kirjoitettu kokonaan uudelleen ja pohjautuu tietoverkkojen yleisiin peruskäsitteisiin, standardeihin ja käytäntöihin.
+
+## Projektin tarkoitus
+
+Tavoitteena on tuottaa selkeä, helposti navigoitava ja teknisesti täsmällinen verkko-opas, joka soveltuu:
+
+- itseopiskeluun
+- erilaisten kurssien tueksi
+- työelämän perustason verkko-osaamisen vahvistamiseen
 
 ## Sisältö
 

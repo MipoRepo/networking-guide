@@ -2,13 +2,19 @@ site_name: Tietoverkot
 site_url: https://tietoverkot.pages.labranet.jamk.fi
 site_description: Tekniset verkko-opas ja tietopohja JAMK -kurssilta
 site_author: Tietoverkot -projekti
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+
+# Käännös: sivuston kieli vaikuttaa käyttöliittymään (valinnainen)
 extra:
   language: fi
-  version: {}
   feature:
     navigation.tabs: true
     navigation.top: true
-    navigation.path: docs
+    navigation.path: "docs"
     navigation.indexes: true
     navigation.footer: true
     search.suggest: true
@@ -17,132 +23,165 @@ extra:
     content.code.copy: true
     content.tooltips: true
     content.code.line-numbers: true
-icon:
-  repo: fontawesome/brands/github
+
+# Palette (valinnainen)
+# palette:
+#   - scheme: default
+#     primary: indigo
+#     accent: indigo
+#     toggle:
+#       icon: material/toggle-switch-off-outline
+#       name: Vaihda tummuun teemaan
+#   - scheme: slate
+#     primary: indigo
+#     accent: indigo
+#     toggle:
+#       icon: material/toggle-switch
+#       name: Vaihda vaaleaan teemaan
+
+# Fontit (valinnainen)
+# font:
+#   text: Roboto
+#   code: Roboto Mono
+
+# Hakeminen
 plugins:
-- search:
-    separator: '[\s\-:_\'
-    min_search_length: 2
-    lang: fi
-- mermaid2
+  - search:
+      separator: '[\s\-:_\'#]+'  # Eri erottimet hakusanoissa
+      lang: fi
+  - mermaid2
+
+# Markdown-laajennukset
 markdown_extensions:
-- toc:
-    permalink: true
-    toc_depth: 3
-    permalink_depth: 3
-    slugify: uslugify
-- admonition
-- attr_list
-- def_list
-- footnotes
-- md_in_html
-- pymdownx.inlinehilite
-- pymdownx.snippets
-- pymdownx.highlight:
-    anchor_linenums: true
-    auto_reference_links: true
-- pymdownx.superfences:
-    custom_span:
-    - name: ruby
-      class: ruby
-    custom_fences:
-    - name: mermaid
-      class: mermaid
-      format: '@@@_mermaid'
-- pymdownx.emoji:
-    emoji_generator: gemoji
-- pymdownx.arithmatex
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: 'mermaid'
+          class: 'mermaid'
+          format: '@@@_mermaid'
+  - pymdownx.emoji:
+      emoji_generator: gemoji
+  - pymdownx.arithmatex
+
+# Ulkoiset tyylit (tarvittaessa laajennettavaksi)
 extra_css: []
 extra_javascript: []
+
+# Navigaatio – rakenteellinen vastaavuus M01–M14 materiaaleihin
 nav:
-- Etusivu: index.md
-- Johdatus tietoverkkoihin:
-  - Johdanto: 01-johdatus/index.md
-  - Mitä on tietoverkko?: 01-johdatus/tietoverkko.md
-  - Verkon komponentit: 01-johdatus/verkon-komponentit.md
-  - Verkkotyypit: 01-johdatus/verkkotyypit.md
-  - Protokollat: 01-johdatus/protokollat.md
-- Ethernet, kytkintä ja VLANit:
-  - Johdanto: 02-ethernet/index.md
-  - Ethernet: 02-ethernet/ethernet.md
-  - MAC-osoitteet: 02-ethernet/mac-osoitteet.md
-  - Ethernet-kehys: 02-ethernet/frame.md
-  - Kytkentä (Switching): 02-ethernet/switching.md
-  - Virtual LAN (VLAN): 02-ethernet/vlan.md
-  - Trunking: 02-ethernet/trunking.md
-- IPv4-osoitteet, aliverkot ja ARP:
-  - Johdanto: 03-ipv4/index.md
-  - IPv4-protokuoli: 03-ipv4/ipv4.md
-  - IP-osoite: 03-ipv4/ip-osoite.md
-  - Aliverkot (Subnet): 03-ipv4/aliverkot.md
-  - Subnetointi: 03-ipv4/subnetointi.md
-  - ARP: 03-ipv4/arp.md
-  - Broadcast-toiminta: 03-ipv4/broadcast.md
-- DHCP ja staattinen reititys:
-  - Johdanto: 04-dhcp-routing/index.md
-  - DHCP: 04-dhcp-routing/dhcp.md
-  - DHCP-prosessi: 04-dhcp-routing/dhcp-prosessi.md
-  - Oletusyhdyskäytävä: 04-dhcp-routing/oletusyhdyskayta.md
-  - Staattinen reititys: 04-dhcp-routing/staattinen-reititys.md
-  - Reititystaulu: 04-dhcp-routing/routing-table.md
-- Verkkolaitteet ja kaapelointi:
-  - Johdanto: 05-laitteet/index.md
-  - Kytkin: 05-laitteet/kytkin.md
-  - Reititin: 05-laitteet/reititin.md
-  - Palomuuri: 05-laitteet/palomuuri.md
-  - Verkkokortti: 05-laitteet/verkkokortti.md
-  - Kaapelointi: 05-laitteet/kaapelointi.md
-- Spanning Tree:
-  - Johdanto: 06-spanning-tree/index.md
-  - Verkkosilmukat: 06-spanning-tree/verkkosilmukat.md
-  - STP: 06-spanning-tree/stp.md
-  - RSTP: 06-spanning-tree/rstp.md
-- IPv4-reititys:
-  - Johdanto: 07-reititys/index.md
-  - Reititys: 07-reititys/routing.md
-  - Staattinen reititys: 07-reititys/staattinen-reititys.md
-  - Dynaaminen reititys: 07-reititys/dynaaminen-reititys.md
-  - OSPF: 07-reititys/ospf.md
-- Verkon segmentointi ja palomuurit:
-  - Johdanto: 08-verkon-turvallisuus/index.md
-  - Segmentointi: 08-verkon-turvallisuus/segmentointi.md
-  - Palomuuri: 08-verkon-turvallisuus/palomuuri.md
-  - Liikenteen suodatus: 08-verkon-turvallisuus/liikenteen-suodatus.md
-  - Turvallinen verkkorakenne: 08-verkon-turvallisuus/turvallinen-verkkorakenne.md
-- IPv4 NAT:
-  - Johdanto: 09-nat/index.md
-  - NAT: 09-nat/nat.md
-  - Staattinen NAT: 09-nat/static-nat.md
-  - Dynaaginen NAT: 09-nat/dynamic-nat.md
-  - PAT: 09-nat/pat.md
-- TCP, UDP, SSH ja HTTP:
-  - Johdanto: 10-tcp-udp/index.md
-  - TCP: 10-tcp-udp/tcp.md
-  - UDP: 10-tcp-udp/udp.md
-  - Portit: 10-tcp-udp/portit.md
-  - SSH: 10-tcp-udp/ssh.md
-  - HTTP: 10-tcp-udp/http.md
-- Palvelimet, päätelaitteet ja WLAN:
-  - Johdanto: 11-palvelimet-ja-wlan/index.md
-  - Palvelimet: 11-palvelimet-ja-wlan/palvelimet.md
-  - Päätelaitteet: 11-palvelimet-ja-wlan/paatelaitteet.md
-  - WLAN: 11-palvelimet-ja-wlan/wlan.md
-  - Langaton verkko: 11-palvelimet-ja-wlan/langaton-verkko.md
-- DNS:
-  - Johdanto: 12-dns/index.md
-  - DNS: 12-dns/dns.md
-  - Nimipalvelu: 12-dns/nimipalvelu.md
-  - DNS-hierarkia: 12-dns/dns-hierarkia.md
-  - DNS-tietueet: 12-dns/dns-tietueet.md
-- IPv6:
-  - Johdanto: 13-ipv6/index.md
-  - IPv6: 13-ipv6/ipv6.md
-  - IPv6-osoitteet: 13-ipv6/ipv6-osoitteet.md
-  - Osoitteistus: 13-ipv6/osoitteistus.md
-  - Dual-stack: 13-ipv6/dual-stack.md
-- Border Gateway Protocol (BGP):
-  - Johdanto: 14-bgp/index.md
-  - BGP: 14-bgp/bgp.md
-  - Autonomous System: 14-bgp/autonomous-system.md
-  - Internetin reititys: 14-bgp/internet-routing.md
-  - Reititys internetissä: 14-bgp/reititys-internetissa.md
+  - Etusivu: index.md
+
+  - Johdatus tietoverkkoihin:
+    - Johdanto: "01-johdatus/index.md"
+    - Mitä on tietoverkko?: "01-johdatus/tietoverkko.md"
+    - Verkon komponentit: "01-johdatus/verkon-komponentit.md"
+    - Verkkotyypit: "01-johdatus/verkkotyypit.md"
+    - Protokollat: "01-johdatus/protokollat.md"
+
+  - Ethernet, kytkintä ja VLANit:
+    - Johdanto: "02-ethernet/index.md"
+    - Ethernet: "02-ethernet/ethernet.md"
+    - MAC-osoitteet: "02-ethernet/mac-osoitteet.md"
+    - Ethernet-kehys: "02-ethernet/frame.md"
+    - Kytkentä (Switching): "02-ethernet/switching.md"
+    - Virtual LAN (VLAN): "02-ethernet/vlan.md"
+    - Trunking: "02-ethernet/trunking.md"
+
+  - IPv4-osoitteet, aliverkot ja ARP:
+    - Johdanto: "03-ipv4/index.md"
+    - IPv4-protokuoli: "03-ipv4/ipv4.md"
+    - IP-osoite: "03-ipv4/ip-osoite.md"
+    - Aliverkot (Subnet): "03-ipv4/aliverkot.md"
+    - Subnetointi: "03-ipv4/subnetointi.md"
+    - ARP: "03-ipv4/arp.md"
+    - Broadcast-toiminta: "03-ipv4/broadcast.md"
+
+  - DHCP ja staattinen reititys:
+    - Johdanto: "04-dhcp-routing/index.md"
+    - DHCP: "04-dhcp-routing/dhcp.md"
+    - DHCP-prosessi: "04-dhcp-routing/dhcp-prosessi.md"
+    - Oletusyhdyskäytävä: "04-dhcp-routing/oletusyhdyskayta.md"
+    - Staattinen reititys: "04-dhcp-routing/staattinen-reititys.md"
+    - Reititystaulu: "04-dhcp-routing/routing-table.md"
+
+  - Verkkolaitteet ja kaapelointi:
+    - Johdanto: "05-laitteet/index.md"
+    - Kytkin: "05-laitteet/kytkin.md"
+    - Reititin: "05-laitteet/reititin.md"
+    - Palomuuri: "05-laitteet/palomuuri.md"
+    - Verkkokortti: "05-laitteet/verkkokortti.md"
+    - Kaapelointi: "05-laitteet/kaapelointi.md"
+
+  - Spanning Tree:
+    - Johdanto: "06-spanning-tree/index.md"
+    - Verkkosilmukat: "06-spanning-tree/verkkosilmukat.md"
+    - STP: "06-spanning-tree/stp.md"
+    - RSTP: "06-spanning-tree/rstp.md"
+
+  - IPv4-reititys:
+    - Johdanto: "07-reititys/index.md"
+    - Reititys: "07-reititys/routing.md"
+    - Staattinen reititys: "07-reititys/staattinen-reititys.md"
+    - Dynaaminen reititys: "07-reititys/dynaatinen-reititys.md"
+    - OSPF: "07-reititys/ospf.md"
+
+  - Verkon segmentointi ja palomuurit:
+    - Johdanto: "08-verkon-turvallisuus/index.md"
+    - Segmentointi: "08-verkon-turvallisuus/segmentointi.md"
+    - Palomuuri: "08-verkon-turvallisuus/palomuuri.md"
+    - Liikenteen suodatus: "08-verkon-turvallisuus/liikenteen-suodatus.md"
+    - Turvallinen verkkorakenne: "08-verkon-turvallisuus/turvallinen-verkkorakenne.md"
+
+  - IPv4 NAT:
+    - Johdanto: "09-nat/index.md"
+    - NAT: "09-nat/nat.md"
+    - Staattinen NAT: "09-nat/static-nat.md"
+    - Dynaaginen NAT: "09-nat/dynamic-nat.md"
+    - PAT: "09-nat/pat.md"
+
+  - TCP, UDP, SSH ja HTTP:
+    - Johdanto: "10-tcp-udp/index.md"
+    - TCP: "10-tcp-udp/tcp.md"
+    - UDP: "10-tcp-udp/udp.md"
+    - Portit: "10-tcp-udp/portit.md"
+    - SSH: "10-tcp-udp/ssh.md"
+    - HTTP: "10-tcp-udp/http.md"
+
+  - Palvelimet, päätelaitteet ja WLAN:
+    - Johdanto: "11-palvelimet-ja-wlan/index.md"
+    - Palvelimet: "11-palvelimet-ja-wlan/palvelimet.md"
+    - Päätelaitteet: "11-palvelimet-ja-wlan/paatelaitteet.md"
+    - WLAN: "11-palvelimet-ja-wlan/wlan.md"
+    - Langaton verkko: "11-palvelimet-ja-wlan/langaton-verkko.md"
+
+  - DNS:
+    - Johdanto: "12-dns/index.md"
+    - DNS: "12-dns/dns.md"
+    - Nimipalvelu: "12-dns/nimipalvelu.md"
+    - DNS-hierarkia: "12-dns/dns-hierarkia.md"
+    - DNS-tietueet: "12-dns/dns-tietueet.md"
+
+  - IPv6:
+    - Johdanto: "13-ipv6/index.md"
+    - IPv6: "13-ipv6/ipv6.md"
+    - IPv6-osoitteet: "13-ipv6/ipv6-osoitteet.md"
+    - Osoitteistus: "13-ipv6/osoitteistus.md"
+    - Dual-stack: "13-ipv6/dual-stack.md"
+
+  - Border Gateway Protocol (BGP):
+    - Johdanto: "14-bgp/index.md"
+    - BGP: "14-bgp/bgp.md"
+    - Autonomous System: "14-bgp/autonomous-system.md"
+    - Internetin reititys: "14-bgp/internet-routing.md"
+    - Reititys internetissä: "14-bgp/reititys-internetissa.md"
