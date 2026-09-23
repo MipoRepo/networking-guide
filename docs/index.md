@@ -1,4 +1,5 @@
 # Tietoverkot – opas perusteisiin
+<img src="assets/images/hero.jpg" alt="Tietoverkot – verkkoarkkitehtuurin hero-kuva" style="width: 100%; height: auto; display: block; margin: 0 auto;">
 
 Tämä sivusto pureutuu tietoverkkojen peruskäsitteisiin, rakenteisiin ja toimintaperiaatteisiin. Sen tarkoitus on tarjota ymmärrettävä ja käytännönläheinen kokonaisuus, jonka avulla tietoverkkojen toiminta ja keskeiset protokollat voidaan hahmottaa loogisesti ja johdonmukaisesti.
 
